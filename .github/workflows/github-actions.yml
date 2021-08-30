@@ -26,3 +26,5 @@ jobs:
                 Seule compte la résistance silencieuse d’un petit nombre, dont la présence impassible de “convives de pierre” sert à créer de nouveaux rapports, de nouvelles distances, de nouvelles valeurs, et permet de constituer un pôle qui, s’il n’empêche certes pas ce monde d’égarés d’être ce qu’il est, transmettra pourtant à quelques-uns la sensation de la vérité, sensation qui sera peut-être aussi le début de quelque crise libératrice.
                 - Hjalmar Schacht - Mémoire d'un magicien
               files: main.js
+              tag_name: ${{ steps.ver.outputs.packageVersion }}
+              name: Release ${{ steps.ver.outputs.packageVersion }}
