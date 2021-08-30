@@ -6,9 +6,9 @@ jobs:
         steps:
           - name: Checkout code
             uses: actions/checkout@v2
-          - name: Read package.json
-            uses: dutscher/read-package-json-endpoint-actions@v1.33.7
-            id: package-json-endpoint
+          - name: Retrieve information from package.json
+            uses: myrotvorets/info-from-package-json-action@1.0.0
+            id: ver
           - name: Unit testing
             uses: actions/setup-node@v2
             with:
@@ -21,8 +21,8 @@ jobs:
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             with:
-              tag_name: ${{ steps.package-json-endpoint.outputs.endpoint }}
-              release_name: Release ${{ steps.package-json-endpoint.outputs.endpoint }}
+              tag_name: ${{ steps.package-json-endpoint.outputs.packageVersion }}
+              release_name: Release ${{ steps.ver.outputs.packageVersion }}
               body: |
                 Il y a dans tout fascisme une morale et une esthétique, mais cette morale et cette esthétique sont conquérantes, et par là, tout fascisme est une religion.
                 - Maurice Bardèche
