@@ -6,6 +6,10 @@ jobs:
         steps:
           - name: Checkout code
             uses: actions/checkout@v2
+          - run: git config --global user.name 'Enzo Do rosario'
+          - run: git config --global user.email 'dorosario.enzo@gmail.com'
+          - run: npm version patch -m "[RELEASE] %s"
+          - run: git push
           - name: Retrieve information from package.json
             uses: myrotvorets/info-from-package-json-action@1.0.0
             id: ver
