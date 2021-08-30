@@ -21,7 +21,7 @@ jobs:
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             with:
-              tag_name: ${{ github.ref }}
+              tag_name: ${{ ${{ steps.package-json-endpoint.outputs.endpoint }} }}
               release_name: Release ${{ ${{ steps.package-json-endpoint.outputs.endpoint }} }}
               body: |
                 Il y a dans tout fascisme une morale et une esthétique, mais cette morale et cette esthétique sont conquérantes, et par là, tout fascisme est une religion.
