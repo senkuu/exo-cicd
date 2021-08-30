@@ -1,0 +1,27 @@
+name: GitHub Actions
+on: [push]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+                 steps:
+                    - name: Checkout code
+                      uses: actions/checkout@v2
+                    - name: Unit testing
+                      uses: actions/setup-node@v2
+                      with:
+                        node-version: '14'
+                      - run: npm install
+                      - run: npm test
+                    - name: Create Release
+                      id: create_release
+                      uses: actions/create-release@v1
+                      env:
+                        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                      with:
+                        tag_name: ${{ github.ref }}
+                        release_name: Release ${{ github.ref }}
+                        body: |
+                            Il y a dans tout fascisme une morale et une esthétique, mais cette morale et cette esthétique sont conquérantes, et par là, tout fascisme est une religion.
+                            - Maurice Bardèche
+                        draft: false
+                        prerelease: false
