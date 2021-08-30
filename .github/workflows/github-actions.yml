@@ -23,7 +23,7 @@ jobs:
             uses: softprops/action-gh-release@v1
             with:
               body: |
-                Seule compte la résistance silencieuse d’un petit nombre, dont la présence impassible de “convives de pierre” sert à créer de nouveaux rapports, de nouvelles distances, de nouvelles valeurs, et permet de constituer un pôle qui, s’il n’empêche certes pas ce monde d’égarés d’être ce qu’il est, transmettra pourtant à quelques-uns la sensation de la vérité, sensation qui sera peut-être aussi le début de quelque crise libératrice.
+                À mes yeux, le nationalisme n'a jamais eu qu'un sens : vivre et agir avec assez d'intensité pour susciter dans les regards d'autrui le respect et l'esprit d'émulation.
                 - Hjalmar Schacht - Mémoire d'un magicien
               files: main.js
               tag_name: ${{ steps.ver.outputs.packageVersion }}
